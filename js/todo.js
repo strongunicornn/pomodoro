@@ -41,7 +41,7 @@ const createTodoListItem = (todo) => {
     todoItem.classList.add('todo__item');
 
     const todoItemWrapper = document.createElement('div')
-    todoItem.classList.add('todo__item-wrapper'),
+    todoItemWrapper.classList.add('todo__item-wrapper'),
     todoItem.append(todoItemWrapper);
 
     const todoBtn = document.createElement('button')
@@ -98,5 +98,7 @@ export const initTodo = () => {
     const title = prompt('Введите имя задачи');
     const todo = addTodo(title);
     createTodoListItem(todo);
+    state.activeTodo = todo;
+    showTodo()
   })
 }

@@ -1,5 +1,5 @@
 const WORK_TIME = 0.5;
-const BREAK_TIME = 0.5 ;
+const BREAK_TIME = 1;
 const RELAX_TIME = 0.5;
 
 export const state = {
@@ -7,7 +7,7 @@ export const state = {
   break: BREAK_TIME,
   relax: RELAX_TIME,
   status: 'work',
-  count: 4 ,
+  count: 4,
   timeLeft: WORK_TIME * 60,
   isActive: false,
   timerId: 0,

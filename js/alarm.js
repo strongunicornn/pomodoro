@@ -8,6 +8,6 @@ const audio = {
 
 
 
-export const alarm= ()=>{
+export const alarm = () => {
   audio[state.status].play();
 }

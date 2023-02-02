@@ -6,9 +6,10 @@ const btnStop = document.querySelector('.control__btn_stop');
 const navBtns = document.querySelectorAll('.navigation__btn');
 
 export const changeActiveBtn = (dataUse) => {
+  state.status = dataUse;
   for (let i = 0; i < navBtns.length; i++) {
     if (navBtns[i].dataset.use === dataUse) {
-      navBtns[i].add('navigation__btn_active')
+      navBtns[i].classList.add('navigation__btn_active')
     } else {
       navBtns[i].classList.remove('navigation__btn_active')
     }
@@ -41,6 +42,13 @@ export const initControl = () => {
   });
 
   btnStop.addEventListener('click', stop);
+
+  for (let i = 0; i < navBtns.length; i++) {
+    navBtns[i].addEventListener('click', () => {
+      changeActiveBtn(navBtns[i].dataset.use);
+      stop();
+    })
+  }
   showTime(state.timeLeft);
 }
 

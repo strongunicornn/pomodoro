@@ -38,10 +38,13 @@ const addTodo = (title) => {
 
 export const updateTodo = (todo) => {
   const todoList = getTodo();
-  const todoItem = todoList.find(item => item.id === todo.id)
-  todoItem.title = todo.title;
-  todoItem.pomodoro = todo.pomodoro;
-  localStorage.setItem('pomodoro', JSON.stringify(todoList));
+  // const todoItem = todoList.find(item => item.id === todo.id)
+  // todoItem.title = todo.title;
+  // todoItem.pomodoro = todo.pomodoro;
+  // localStorage.setItem('pomodoro', JSON.stringify(todoList));
+  if(!todoList.length){
+    return;
+  }
 }
 
 const deleteTodo = (todo) => {

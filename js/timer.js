@@ -19,7 +19,7 @@ export const startTimer = () => {
   
 
   state.timerId = setInterval(() => {
-    state.timeLeft -= 5;
+    state.timeLeft -= 1;
     showTime(state.timeLeft);
 
     document.title = state.timeLeft;
